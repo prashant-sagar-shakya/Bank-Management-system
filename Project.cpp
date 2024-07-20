@@ -5,7 +5,7 @@
 #include <ctime>
 using namespace std;
 
-class temp
+class bank
 {
 	int accNo;
 	string name;
@@ -28,7 +28,7 @@ public:
 
 int main()
 {
-	temp obj;
+	bank obj;
 	char choice;
 
 	cout << "\n\n\n\t\t......:::Prashant's Bank:::......";
@@ -87,7 +87,7 @@ int main()
 }
 
 // Definition of createAccount function
-void temp::createAccount()
+void bank::createAccount()
 {
 	srand(time(0));
 	accNo = rand();
@@ -96,11 +96,11 @@ void temp::createAccount()
 	file.open("data.txt", ios::in);
 	if (file)
 	{
-		int tempAccNo;
+		int bankAccNo;
 		bool exists = false;
-		while (file >> tempAccNo)
+		while (file >> bankAccNo)
 		{
-			if (tempAccNo == accNo)
+			if (bankAccNo == accNo)
 			{
 				exists = true;
 				break;
@@ -140,7 +140,7 @@ void temp::createAccount()
 }
 
 // Definition of depositAmount function
-void temp::depositAmount()
+void bank::depositAmount()
 {
 	cout << "Enter amount to deposit :: ";
 	cin >> newAmount;
@@ -171,7 +171,7 @@ void temp::depositAmount()
 }
 
 // Definition of withdrawAmount function
-void temp::withdrawAmount()
+void bank::withdrawAmount()
 {
 	cout << "Enter amount to withdraw :: ";
 	cin >> newAmount;
@@ -209,7 +209,7 @@ void temp::withdrawAmount()
 }
 
 // Definition of checkInfo function
-void temp::checkInfo()
+void bank::checkInfo()
 {
 	file.open("data.txt", ios::in);
 	if (!file)
